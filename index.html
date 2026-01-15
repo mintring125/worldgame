@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 아빠와 딸의 게임전집 🎮</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-characters">
+                <img src="assets/celeste.png" alt="부엉이" class="header-avatar avatar-left">
+                <div class="header-content">
+                    <h1>🎮 아빠와 딸의 게임전집 🎮</h1>
+                    <p class="subtitle">동물의 숲 친구들과 함께하는 보드게임!</p>
+                </div>
+                <img src="assets/sally.png" alt="샐리" class="header-avatar avatar-right">
+            </div>
+        </header>
+
+        <!-- Game Grid -->
+        <main class="games-grid">
+            <!-- 오델로 -->
+            <a href="games/othello/index.html" class="game-card" data-game="othello">
+                <div class="game-icon">⚫</div>
+                <div class="game-info">
+                    <h2>리버시 (오델로)</h2>
+                    <p>상대의 말을 뒤집어 더 많이 차지하세요!</p>
+                </div>
+                <div class="game-badge ready">플레이 가능</div>
+            </a>
+
+            <!-- 커넥트 포 -->
+            <a href="games/connect4/index.html" class="game-card" data-game="connect4">
+                <div class="game-icon">🔴</div>
+                <div class="game-info">
+                    <h2>커넥트 포</h2>
+                    <p>4개를 먼저 연결하면 승리!</p>
+                </div>
+                <div class="game-badge ready">플레이 가능</div>
+            </a>
+
+            <!-- 오목 -->
+            <a href="games/gomoku/index.html" class="game-card" data-game="gomoku">
+                <div class="game-icon">⚪</div>
+                <div class="game-info">
+                    <h2>오목</h2>
+                    <p>바둑돌을 5개 연결하면 승리!</p>
+                </div>
+                <div class="game-badge ready">플레이 가능</div>
+            </a>
+
+            <!-- 도트 앤드 박스 -->
+            <a href="games/dots-and-boxes/index.html" class="game-card" data-game="dots">
+                <div class="game-icon">🔲</div>
+                <div class="game-info">
+                    <h2>도트 앤드 박스</h2>
+                    <p>선을 그어 사각형을 더 많이 만드세요!</p>
+                </div>
+                <div class="game-badge ready">플레이 가능</div>
+            </a>
+
+            <!-- 매칭 -->
+            <a href="games/memory/index.html" class="game-card" data-game="memory">
+                <div class="game-icon">🃏</div>
+                <div class="game-info">
+                    <h2>매칭 (메모리)</h2>
+                    <p>같은 그림의 카드 짝을 찾으세요!</p>
+                </div>
+                <div class="game-badge ready">플레이 가능</div>
+            </a>
+
+            <!-- 체커 -->
+            <a href="games/checkers/index.html" class="game-card" data-game="checkers">
+                <div class="game-icon">🏁</div>
+                <div class="game-info">
+                    <h2>체커</h2>
+                    <p>대각선으로 뛰어넘어 말을 잡으세요!</p>
+                </div>
+                <div class="game-badge ready">플레이 가능</div>
+            </a>
+
+            <!-- 만칼라 -->
+            <a href="games/mancala/index.html" class="game-card" data-game="mancala">
+                <div class="game-icon">🥣</div>
+                <div class="game-info">
+                    <h2>만칼라</h2>
+                    <p>돌을 옮겨 더 많이 모으세요!</p>
+                </div>
+                <div class="game-badge ready">플레이 가능</div>
+            </a>
+
+            <!-- 토끼와 사냥개 -->
+            <a href="games/hare-and-hounds/index.html" class="game-card" data-game="hare">
+                <div class="game-icon">🐰</div>
+                <div class="game-info">
+                    <h2>토끼와 사냥개</h2>
+                    <p>토끼는 도망치고, 사냥개는 몰아넣으세요!</p>
+                </div>
+                <div class="game-badge ready">플레이 가능</div>
+            </a>
+
+            <!-- 나인 멘스 모리스 -->
+            <a href="games/nine-mens-morris/index.html" class="game-card" data-game="morris">
+                <div class="game-icon">⚪</div>
+                <div class="game-info">
+                    <h2>나인 멘스 모리스</h2>
+                    <p>3개를 연결하고 상대 말을 제거하세요!</p>
+                </div>
+                <div class="game-badge ready">플레이 가능</div>
+            </a>
+
+            <!-- 헥스 -->
+            <a href="games/hex/index.html" class="game-card" data-game="hex">
+                <div class="game-icon">⬡</div>
+                <div class="game-info">
+                    <h2>헥스</h2>
+                    <p>육각형 돌을 이어 길을 만드세요!</p>
+                </div>
+                <div class="game-badge ready">플레이 가능</div>
+            </a>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>🌿 동물의 숲 친구들과 함께하는 즐거운 게임 시간! 🌿</p>
+            <p class="footer-small">Made with ❤️ for 아빠와 딸</p>
+        </footer>
+    </div>
+
+    <!-- Decorative elements -->
+    <div class="decoration leaf-1">🍃</div>
+    <div class="decoration leaf-2">🍂</div>
+    <div class="decoration leaf-3">🌸</div>
+    <div class="decoration star-1">⭐</div>
+    <div class="decoration star-2">✨</div>
+</body>
+
+</html>
