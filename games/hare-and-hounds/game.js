@@ -61,8 +61,8 @@ function buildAdjacency() {
 function initGame() {
     buildAdjacency();
 
-    harePosition = 10;
-    houndsPositions = [3, 6, 9];
+    harePosition = 10;  // 토끼: 오른쪽 끝에서 시작 (목표: 왼쪽 끝 노드 0)
+    houndsPositions = [3, 6, 9];  // 사냥개: 토끼 앞에서 시작, 왼쪽으로 이동하며 막음
     currentPlayer = HARE;
     selectedPiece = null;
     validMoves = [];
@@ -71,7 +71,7 @@ function initGame() {
 
     renderBoard();
     updateUI();
-    updateMessage('토끼(부엉이)가 먼저 시작합니다! 🐰');
+    updateMessage('🐰 토끼를 클릭하고 → 빈 칸을 클릭하세요!');
     closeModal();
 }
 
@@ -269,9 +269,17 @@ function updateUI() {
 
     if (!isGameOver) {
         if (currentPlayer === HARE) {
-            updateMessage('토끼(부엉이) 차례! 왼쪽 끝으로 도망가세요! 🐰');
+            if (selectedPiece === 'hare') {
+                updateMessage('✨ 초록색 칸을 클릭해서 이동하세요!');
+            } else {
+                updateMessage('🐰 토끼를 클릭하고 → 빈 칸을 클릭하세요!');
+            }
         } else {
-            updateMessage('사냥개(샐리) 차례! 토끼를 막으세요! 🐕');
+            if (selectedPiece !== null) {
+                updateMessage('✨ 초록색 칸을 클릭해서 이동하세요!');
+            } else {
+                updateMessage('🐕 사냥개를 클릭하고 → 빈 칸을 클릭하세요!');
+            }
         }
     }
 }

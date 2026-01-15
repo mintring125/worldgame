@@ -142,8 +142,8 @@ body {
 
 .game-board {
     position: relative;
-    width: 360px;
-    height: 360px;
+    width: 420px;
+    height: 420px;
     background: var(--board-color);
     border-radius: 12px;
     padding: 20px;
@@ -167,8 +167,8 @@ body {
 /* Nodes */
 .node {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background: #F5F5DC;
     border-radius: 50%;
     display: flex;

@@ -192,7 +192,7 @@ body {
     padding: 15px;
     background: linear-gradient(145deg, var(--board-blue) 0%, var(--board-blue-dark) 100%);
     border-radius: 20px;
-    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.3), 0 8px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .board {
@@ -203,9 +203,9 @@ body {
 }
 
 .cell {
-    width: 55px;
-    height: 55px;
-    background: linear-gradient(145deg, #E3F2FD 0%, #BBDEFB 100%);
+    width: 70px;
+    height: 70px;
+    background: #E3F2FD;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -217,7 +217,7 @@ body {
 
 .cell:hover {
     transform: scale(1.05);
-    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 255, 255, 0.5);
+    background: #FFF;
 }
 
 .cell .disk {
@@ -230,12 +230,14 @@ body {
 .cell .disk.celeste {
     background: radial-gradient(circle at 30% 30%, #E57373 0%, var(--celeste-red) 70%);
     border: 3px solid #A33;
-    animation: drop 0.4s ease;
 }
 
 .cell .disk.sally {
     background: radial-gradient(circle at 30% 30%, #FFF9C4 0%, var(--sally-yellow) 70%);
     border: 3px solid #FFA000;
+}
+
+.cell .disk.new-piece {
     animation: drop 0.4s ease;
 }
 

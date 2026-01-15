@@ -179,8 +179,8 @@ body {
 }
 
 .hex-cell {
-    width: 36px;
-    height: 32px;
+    width: 42px;
+    height: 38px;
     margin: 1px;
     background: var(--hex-empty);
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);

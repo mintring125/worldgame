@@ -85,8 +85,8 @@ body {
 
 /* Stores */
 .store {
-    width: 80px;
-    height: 180px;
+    width: 100px;
+    height: 220px;
     background: linear-gradient(180deg, var(--pit-color) 0%, #3D3225 100%);
     border-radius: 40px;
     display: flex;
@@ -144,8 +144,8 @@ body {
 }
 
 .pit {
-    width: 60px;
-    height: 60px;
+    width: 75px;
+    height: 75px;
     background: linear-gradient(180deg, var(--pit-color) 0%, #3D3225 100%);
     border-radius: 50%;
     display: flex;
@@ -288,6 +288,33 @@ body {
 
 .btn:hover {
     transform: translateY(-2px);
+}
+
+/* Rules */
+.rules {
+    margin-top: 20px;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.rules h3 {
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.rules ul {
+    list-style: none;
+    padding: 0;
+}
+
+.rules li {
+    padding: 6px 0;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 
 /* Modal */

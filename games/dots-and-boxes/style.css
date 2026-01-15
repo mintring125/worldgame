@@ -176,8 +176,8 @@ body {
 }
 
 .dot {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     background: radial-gradient(circle, #37474F, #263238);
     border-radius: 50%;
     z-index: 2;
@@ -190,19 +190,19 @@ body {
 }
 
 .line-h {
-    width: 40px;
+    width: 55px;
     height: 10px;
     background: #B0BEC5;
     border-radius: 5px;
-    margin: 3px 0;
+    margin: 5px 0;
 }
 
 .line-v {
     width: 10px;
-    height: 40px;
+    height: 55px;
     background: #B0BEC5;
     border-radius: 5px;
-    margin: 0 3px;
+    margin: 0 5px;
 }
 
 .line:hover:not(.taken) {
@@ -219,8 +219,8 @@ body {
 }
 
 .box {
-    width: 40px;
-    height: 40px;
+    width: 55px;
+    height: 55px;
     border-radius: 5px;
     transition: background 0.3s ease;
     display: flex;

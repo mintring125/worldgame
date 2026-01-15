@@ -30,6 +30,8 @@ function initGame() {
 
     currentPlayer = CELESTE;
     isGameOver = false;
+    lastPlacedPiece = null;
+    lastFlippedDisks = [];
 
     renderBoard();
     updateUI();
@@ -38,6 +40,9 @@ function initGame() {
 }
 
 // 보드 렌더링
+let lastPlacedPiece = null;
+let lastFlippedDisks = [];
+
 function renderBoard() {
     const boardElement = document.getElementById('board');
     boardElement.innerHTML = '';
@@ -63,6 +68,17 @@ function renderBoard() {
             if (board[row][col] !== EMPTY) {
                 const disk = document.createElement('div');
                 disk.className = `disk ${board[row][col] === CELESTE ? 'celeste' : 'sally'}`;
+
+                // 새로 놓은 돌에만 애니메이션
+                if (lastPlacedPiece && lastPlacedPiece.row === row && lastPlacedPiece.col === col) {
+                    disk.classList.add('new-piece');
+                }
+
+                // 뒤집힌 돌에 flip 클래스 적용
+                if (lastFlippedDisks.some(d => d.row === row && d.col === col)) {
+                    disk.classList.add('flip');
+                }
+
                 cell.appendChild(disk);
             }
 
@@ -82,6 +98,9 @@ function handleCellClick(row, col) {
 
     // 돌 놓기
     board[row][col] = currentPlayer;
+    lastPlacedPiece = { row, col };  // 새 돌 위치 저장
+    lastFlippedDisks = flippedDisks;  // 뒤집힌 돌 저장
+    playPlaceSound();  // 효과음 재생
 
     // 돌 뒤집기 with 애니메이션
     flipDisks(flippedDisks);

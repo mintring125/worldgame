@@ -17,7 +17,11 @@ function initGame() {
     updateUI();
     updateMessage('부엉이가 먼저 시작합니다! 🦉');
     closeModal();
+    lastPlacedPiece = null;
 }
+
+// 새로 놓은 돌 위치 추적
+let lastPlacedPiece = null;
 
 function renderBoard() {
     const boardEl = document.getElementById('board');
@@ -32,6 +36,12 @@ function renderBoard() {
             if (board[row][col] !== EMPTY) {
                 const disk = document.createElement('div');
                 disk.className = `disk ${board[row][col] === CELESTE ? 'celeste' : 'sally'}`;
+
+                // 새로 놓은 돌에만 애니메이션 적용
+                if (lastPlacedPiece && lastPlacedPiece.row === row && lastPlacedPiece.col === col) {
+                    disk.classList.add('new-piece');
+                }
+
                 cell.appendChild(disk);
             }
 
@@ -56,6 +66,7 @@ function handleClick(col) {
     if (row === -1) return; // 열이 가득 참
 
     board[row][col] = currentPlayer;
+    lastPlacedPiece = { row, col };  // 새 돌 위치 저장
     playDropSound();
 
     renderBoard();

@@ -99,8 +99,8 @@ body {
 }
 
 .player-avatar {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     margin: 0 auto 8px;
     border-radius: 50%;
     overflow: hidden;
@@ -156,8 +156,8 @@ body {
 }
 
 .card {
-    width: 70px;
-    height: 90px;
+    width: 85px;
+    height: 110px;
     perspective: 1000px;
     cursor: pointer;
 }
