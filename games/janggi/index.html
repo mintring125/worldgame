@@ -1,75 +1,64 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🐰 토끼와 사냥개 🐕</title>
+    <title>♟️ 장기 ♟️</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../../assets/victory-video.css">
 </head>
-
 <body>
     <div class="container">
         <!-- Header -->
         <header class="header">
             <a href="../../index.html" class="back-button">🏠 홈으로</a>
-            <h1>🐰 토끼와 사냥개 🐕</h1>
-            <p class="subtitle">토끼는 도망치고, 사냥개는 몰아넣으세요!</p>
+            <h1>♟️ 장기 ♟️</h1>
+            <p class="subtitle">귀여운 동물 친구들과 장기 한판!</p>
         </header>
 
         <!-- Players -->
         <div class="players">
-            <!-- Player 1: Celeste as Hare -->
+            <!-- Player 1: Celeste (부엉이) - 초나라 -->
             <div class="player" id="player1">
                 <div class="player-avatar">
                     <img src="../../assets/celeste.png" alt="부엉이">
                 </div>
                 <div class="player-info">
-                    <span class="player-name">부엉이 (토끼)</span>
-                    <span class="player-role">🐰 왼쪽 끝으로 도망!</span>
+                    <span class="player-name">부엉이 (초)</span>
+                    <div class="player-score">잡은 기물: <span id="score1">0</span>개</div>
+                    <div class="player-captured" id="captured1"></div>
                 </div>
             </div>
 
-            <!-- Player 2: Sally as Hounds -->
+            <!-- Player 2: Sally (샐리) - 한나라 -->
             <div class="player" id="player2">
                 <div class="player-avatar">
                     <img src="../../assets/sally.png" alt="샐리">
                 </div>
                 <div class="player-info">
-                    <span class="player-name">샐리 (사냥개)</span>
-                    <span class="player-role">🐕 토끼를 막아!</span>
+                    <span class="player-name">샐리 (한)</span>
+                    <div class="player-score">잡은 기물: <span id="score2">0</span>개</div>
+                    <div class="player-captured" id="captured2"></div>
                 </div>
             </div>
         </div>
 
         <!-- Game Board -->
         <div class="board-container">
-            <div class="game-board" id="board"></div>
+            <div class="board" id="board"></div>
         </div>
 
         <!-- Message Area -->
         <div class="message-area" id="messageArea">
-            토끼(부엉이)가 먼저 시작합니다! 🐰
+            부엉이가 먼저 시작합니다! 🦉
         </div>
 
         <!-- Controls -->
         <div class="controls">
             <button class="btn btn-restart" onclick="initGame()">🔄 새 게임</button>
-        </div>
-
-        <!-- Rules -->
-        <div class="rules">
-            <h3>📋 규칙</h3>
-            <ul>
-                <li>🐰 <strong>토끼</strong>: 모든 방향으로 1칸 이동 가능 (목표: 왼쪽 끝 🏠)</li>
-                <li>🐕 <strong>사냥개</strong>: 위, 아래, 오른쪽(전진)으로만 이동 가능 (후퇴 금지 🚫)</li>
-                <li>🎯 토끼가 사냥개를 피해 <strong>왼쪽 끝(0)</strong>에 도달하면 토끼 승리!</li>
-                <li>🚫 사냥개가 토끼를 포위해서 움직이지 못하게 하면 사냥개 승리!</li>
-            </ul>
         </div>
 
         <!-- Game Over Modal -->
@@ -78,6 +67,7 @@
                 <div id="confetti"></div>
                 <div class="winner-avatar" id="winnerAvatar"></div>
                 <h2 class="winner-text" id="winnerText"></h2>
+                <p class="final-score" id="finalScore"></p>
                 <button class="btn btn-play-again" onclick="initGame()">🎮 다시 하기</button>
             </div>
         </div>
@@ -86,5 +76,4 @@
     <script src="game.js"></script>
     <script src="../../assets/victory-video.js"></script>
 </body>
-
 </html>

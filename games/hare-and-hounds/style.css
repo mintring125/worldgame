@@ -124,18 +124,18 @@ body {
 
 .game-board {
     position: relative;
-    width: 500px;
-    height: 250px;
+    width: 600px;
+    height: 350px;
     background: linear-gradient(135deg, #90EE90, #228B22);
     border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 0;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 .node {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     background: var(--board-color);
     border-radius: 50%;
     display: flex;
@@ -143,12 +143,14 @@ body {
     justify-content: center;
     cursor: pointer;
     transition: all 0.2s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border: 3px solid #8B4513;
+    transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
 .node:hover {
-    transform: scale(1.1);
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .node.valid-move {
@@ -162,13 +164,13 @@ body {
 
 /* Pieces */
 .piece {
-    width: 40px;
-    height: 40px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 32px;
     cursor: pointer;
     transition: all 0.2s;
 }

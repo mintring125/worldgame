@@ -10,17 +10,17 @@ const HOUNDS = 2;   // 샐리 - 사냥개
 //    \|/ \|/ \|/
 //     7 - 8 - 9
 const NODE_POSITIONS = [
-    { x: 20, y: 85 },   // 0: 왼쪽 끝
-    { x: 100, y: 25 },  // 1
-    { x: 180, y: 25 },  // 2
-    { x: 260, y: 25 },  // 3
-    { x: 100, y: 85 },  // 4
-    { x: 180, y: 85 },  // 5
-    { x: 260, y: 85 },  // 6
-    { x: 100, y: 145 }, // 7
-    { x: 180, y: 145 }, // 8
-    { x: 260, y: 145 }, // 9
-    { x: 340, y: 85 }   // 10: 오른쪽 끝
+    { x: 50, y: 175 },   // 0: 왼쪽 끝 (목표)
+    { x: 175, y: 40 },   // 1
+    { x: 300, y: 40 },   // 2
+    { x: 425, y: 40 },   // 3
+    { x: 175, y: 175 },  // 4
+    { x: 300, y: 175 },  // 5
+    { x: 425, y: 175 },  // 6
+    { x: 175, y: 310 },  // 7
+    { x: 300, y: 310 },  // 8
+    { x: 425, y: 310 },  // 9
+    { x: 550, y: 175 }   // 10: 오른쪽 끝 (토끼 시작)
 ];
 
 // 연결된 노드 (양방향)
@@ -61,8 +61,8 @@ function buildAdjacency() {
 function initGame() {
     buildAdjacency();
 
-    harePosition = 10;  // 토끼: 오른쪽 끝에서 시작 (목표: 왼쪽 끝 노드 0)
-    houndsPositions = [3, 6, 9];  // 사냥개: 토끼 앞에서 시작, 왼쪽으로 이동하며 막음
+    harePosition = 10;  // 토끼: 오른쪽 끝 (목표: 왼쪽 끝 노드 0)
+    houndsPositions = [0, 1, 7];  // 사냥개: 왼쪽 끝과 인접 기둥에서 시작 (토끼 앞을 막고 전진)
     currentPlayer = HARE;
     selectedPiece = null;
     validMoves = [];
@@ -90,8 +90,8 @@ function renderBoard() {
         const length = Math.sqrt(Math.pow(posB.x - posA.x, 2) + Math.pow(posB.y - posA.y, 2));
         const angle = Math.atan2(posB.y - posA.y, posB.x - posA.x) * 180 / Math.PI;
 
-        line.style.left = (posA.x + 25) + 'px';
-        line.style.top = (posA.y + 23) + 'px';
+        line.style.left = posA.x + 'px';
+        line.style.top = posA.y + 'px';
         line.style.width = length + 'px';
         line.style.transform = `rotate(${angle}deg)`;
 
@@ -177,10 +177,10 @@ function getHareMoves() {
 function getHoundMoves(fromNode) {
     const moves = [];
     for (const adjacent of ADJACENCY[fromNode]) {
-        // 사냥개는 왼쪽(x가 작은 쪽)으로만 갈 수 있음
+        // 사냥개는 토끼가 있는 오른쪽(x가 커지는 쪽)이나 위아래로만 갈 수 있음 (후퇴 금지)
         if (!houndsPositions.includes(adjacent) &&
             adjacent !== harePosition &&
-            NODE_POSITIONS[adjacent].x <= NODE_POSITIONS[fromNode].x) {
+            NODE_POSITIONS[adjacent].x >= NODE_POSITIONS[fromNode].x) {
             moves.push(adjacent);
         }
     }
